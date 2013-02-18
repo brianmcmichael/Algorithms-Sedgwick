@@ -2,7 +2,7 @@ package com.brianmcmichael;
 
 public class FixedCapacityStackOfStrings 
 {
-  private String[] s;
+	private String[] s;
 	private int N = 0;
 	
 	//A cheat to limit capacity by requiring input
@@ -16,5 +16,9 @@ public class FixedCapacityStackOfStrings
 	{	s[N++] = item; }
 	
 	public String pop()
-	{	return s[--N];	}
+	{	
+		String item = s[--N];
+		s[N] = null;
+		return item;	
+	}
 }
